@@ -21,23 +21,25 @@ The following were done for the process using SQL server;
 4. Data Validation.
 
 ### Exploratory Data Analysis
-1. Calculating App's Net Promoter Score (N.P.S.) using user's rating
+- Calculating App's Net Promoter Score (N.P.S.) using user's rating
    
-   ` SELECT distinct
-(SELECT count(TRY_CAST (Rating AS FLOAT)) AS PROMOTER
-FROM googleplaystore 
-WHERE Rating <> 'Nan' AND TRY_CAST(Rating AS FLOAT) >=4 AND TRY_CAST(Rating AS FLOAT) <=5 ) AS PROMOTER,
+   ``` sql
+    SELECT distinct
+   (SELECT count(TRY_CAST (Rating AS FLOAT)) AS PROMOTER
+   FROM googleplaystore 
+   WHERE Rating <> 'Nan' AND TRY_CAST(Rating AS FLOAT) >=4 AND TRY_CAST(Rating AS FLOAT) <=5 ) AS PROMOTER,
 
-(SELECT count(TRY_CAST(Rating AS FLOAT)) AS DETRACTOR
-FROM googleplaystore 
-WHERE Rating <> 'Nan' AND TRY_CAST(Rating AS FLOAT) >=1 AND TRY_CAST(Rating AS FLOAT) <=2.9) AS DETRACTOR,
+   (SELECT count(TRY_CAST(Rating AS FLOAT)) AS DETRACTOR
+   FROM googleplaystore 
+   WHERE Rating <> 'Nan' AND TRY_CAST(Rating AS FLOAT) >=1 AND TRY_CAST(Rating AS FLOAT) <=2.9) AS DETRACTOR,
 
-(SELECT count(Rating) AS PASSIVE
-FROM googleplaystore 
-WHERE Rating <> 'Nan' AND TRY_CAST(Rating AS FLOAT) >=3 AND TRY_CAST(Rating AS FLOAT) <=3.9) AS PASSIVE,
+   (SELECT count(Rating) AS PASSIVE
+   FROM googleplaystore 
+   WHERE Rating <> 'Nan' AND TRY_CAST(Rating AS FLOAT) >=3 AND TRY_CAST(Rating AS FLOAT) <=3.9) AS PASSIVE,
 
-(SELECT COUNT(TRY_CAST(Rating AS FLOAT)) AS TOTAL_RATING
-FROM googleplaystore 
-WHERE Rating <> 'Nan') AS TOTAL_RATING
-FROM googleplaystore 
-`
+   (SELECT COUNT(TRY_CAST(Rating AS FLOAT)) AS TOTAL_RATING
+   FROM googleplaystore 
+   WHERE Rating <> 'Nan') AS TOTAL_RATING
+   FROM googleplaystore
+```
+
