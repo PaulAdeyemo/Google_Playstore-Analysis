@@ -6,7 +6,7 @@ The goal of this analysis is  to analyze the Google Play Store Apps dataset to d
 The ultimate objective is to provide recommendations for app developers to enhance their app's performance and user satisfaction.
 
 ### Data Source 
-The data source is attached in the repository contains the user reviews and ratings from 2014-2018.
+The data source attached in the repository contains the user reviews and ratings from 2014-2018.
 
 ### Tools
 1. SQL server to uncover Insights.
